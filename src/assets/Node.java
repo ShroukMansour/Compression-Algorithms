@@ -1,3 +1,4 @@
+package assets;
 
 public class Node {
 
@@ -59,13 +60,13 @@ public class Node {
     }
 
     public Node search(Node searchNode, Node node) {
-        if(node != null) {
-            if(searchNode.getSympol() == node.getSympol() && node.getLeftNode() == null
+        if (node != null) {
+            if (searchNode.getSympol() == node.getSympol() && node.getLeftNode() == null
                     && node.getRightNode() == null) {
                 return node;
             } else {
                 Node foundNode = search(searchNode, node.getLeftNode());
-                if(foundNode == null)
+                if (foundNode == null)
                     foundNode = search(searchNode, node.getRightNode());
                 return foundNode;
             }
@@ -81,14 +82,14 @@ public class Node {
     }
 
     public Node searchBinary(Node searchNode, Node node) {
-        if(node != null) {
-            if(searchNode.getBinary().equals(node.getBinary())
+        if (node != null) {
+            if (searchNode.getBinary().equals(node.getBinary())
                     && node.getLeftNode() == null
                     && node.getRightNode() == null) {
                 return node;
             } else {
                 Node foundNode = searchBinary(searchNode, node.getLeftNode());
-                if(foundNode == null)
+                if (foundNode == null)
                     foundNode = searchBinary(searchNode, node.getRightNode());
                 return foundNode;
             }
@@ -96,14 +97,14 @@ public class Node {
             return null;
     }
 
-    public void traverse (Node root){
+    public void traverse(Node root) {
 
-        if (root.getLeftNode() != null){
-            traverse (root.getLeftNode());
+        if (root.getLeftNode() != null) {
+            traverse(root.getLeftNode());
         }
-        System.out.println(root.getSympol() + " num: " + root.getNodeNum() + " counter: "  + root.getCounter() + " binary: " + root.getBinary());
-        if (root.getRightNode() != null){
-            traverse (root.getRightNode());
+        System.out.println(root.getSympol() + " num: " + root.getNodeNum() + " counter: " + root.getCounter() + " binary: " + root.getBinary());
+        if (root.getRightNode() != null) {
+            traverse(root.getRightNode());
         }
     }
 
@@ -159,18 +160,18 @@ public class Node {
 
     private Node findSwapNode(Node node, Node searchNode, Node swapNode) {
 
-        if(searchNode.getCounter() <= swapNode.getCounter() &&
+        if (searchNode.getCounter() <= swapNode.getCounter() &&
                 searchNode.getNodeNum() > swapNode.getNodeNum() &&
                 searchNode != node.getParent()) {
             swapNode = searchNode;
         }
         if (searchNode.getLeftNode() != null) {
-            swapNode = findSwapNode (node, searchNode.getLeftNode(), swapNode);
+            swapNode = findSwapNode(node, searchNode.getLeftNode(), swapNode);
         }
         if (searchNode.getRightNode() != null) {
-            swapNode = findSwapNode (node, searchNode.getRightNode(), swapNode);
+            swapNode = findSwapNode(node, searchNode.getRightNode(), swapNode);
         }
-         return swapNode;
+        return swapNode;
     }
 
     public String getBinary() {
@@ -228,7 +229,6 @@ public class Node {
     public void setParent(Node parent) {
         this.parent = parent;
     }
-
 
 
 }
