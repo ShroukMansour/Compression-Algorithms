@@ -15,6 +15,7 @@ Compression algorithms techniques.
   <li>Predictive Feed Forward</li>
 </ul>
 
+#### Steps to compress file:
 1. select the file you want to compress or decompress
 2. select the compression techniques
 3. click on compress or decompress 
